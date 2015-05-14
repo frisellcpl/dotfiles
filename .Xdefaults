@@ -1,0 +1,56 @@
+!-----------------------------------------
+! URxvt settings with zenburn theme
+!-----------------------------------------
+URxvt*termName: rxvt-unicode-256color
+URxvt*loginShell: true
+URxvt*scrollBar: false
+URxvt*secondaryScroll: true
+URxvt*saveLines: 65535
+URxvt*cursorUnderline: false
+URxvt*urgentOnBell: true
+URxvt*cursorBlink: false
+! Extensions
+URxvt*perl-lib: /usr/lib/urxvt/perl/
+URxvt*perl-ext-common: default,matcher,searchable-scrollback,clipboard
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt*urlLauncher: chromium
+URxvt*matcher.button: 1
+
+! Catch ugly URLs
+URxvt*cutchars: '"'()*<>[]{|}
+
+! Font Appearance
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
+
+URxvt*background:        #111111
+URxvt*foreground:        #DCDCDC
+
+URxvt*cursorColor:       #DCDCDC
+URxvt*colorBD:           #DCDCDC
+
+!Black
+URxvt*color0:            #434343
+URxvt*color8:            #5d5f5e
+!Red
+URxvt*color1:            #a16a71
+URxvt*color9:            #c7838f
+!Green
+URxvt*color2:            #656565
+URxvt*color10:           #7F9F7F
+!Yellow
+URxvt*color3:            #F0DFAF
+URxvt*color11:           #DFAF8F
+!Blue
+URxvt*color4:            #6a80a1
+URxvt*color12:           #839fc7
+!Magenta
+URxvt*color5:            #94BFF3
+URxvt*color13:           #4C7073
+!Cyan
+URxvt*color6:            #93E0E3
+URxvt*color14:           #83c7bc
+!White
+URxvt*color7:            #DCDCDC
+URxvt*color15:           #DCDCDC
