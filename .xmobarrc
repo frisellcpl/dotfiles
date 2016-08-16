@@ -1,6 +1,6 @@
 Config { font = "xft:DejaVu Sans Mono:style=book:antialias=true:pixelsize=12"
-       , bgColor = "#111111"
-       , fgColor = "#D7D7D7"
+       , bgColor = "#0c1014"
+       , fgColor = "#99d1ce"
        , pickBroadest = True
        , lowerOnStart = False
        , sepChar = "%"

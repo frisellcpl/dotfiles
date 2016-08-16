@@ -4,6 +4,7 @@ import XMonad
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.SetWMName
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
 import XMonad.Layout.Grid
@@ -18,15 +19,17 @@ main = do
         { layoutHook = layoutHook'
         , manageHook = manageHook' <+> manageHook defaultConfig
         , logHook = logHook' xmproc
-        , borderWidth = 1
+        , borderWidth = 2
         , modMask = modMask'
         , terminal = "urxvt"
-        , normalBorderColor = "#282828"
-        , focusedBorderColor = "#BF4237"
-        } `additionalKeys` keyBindings'
-          `additionalMouseBindings` mouseBindings'
+        , normalBorderColor = "#091f2e"
+        , focusedBorderColor = "#c23127"
+        , startupHook = do
+            setWMName "LG3D"}
+        `additionalKeys` keyBindings'
+        `additionalMouseBindings` mouseBindings'
 
-layoutHook' = avoidStruts $ smartBorders $ layouts
+layoutHook' = avoidStruts $ smartBorders $ smartSpacing 5 $ layouts
     where layouts = tiled ||| threecol ||| Full ||| Grid
           tiled = Tall nmaster delta ratio
           threecol = ThreeCol nmaster delta ratio

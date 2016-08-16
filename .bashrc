@@ -10,6 +10,7 @@ export DISPLAY=:0.0
 
 export PATH="$PATH:/usr/local/sbin:/usr/local/bin:$HOME/bin:$HOME/.gem/ruby/2.1.0/bin"
 export MANPATH="/usr/local/man:$MANPATH"
+export YRLIMG_SUBSCRIPTION="xahveiyei9ma8een0Aiph8moh5yohp0c"
 
 # Bash history ##############################################################
 
@@ -38,6 +39,8 @@ done
 # Override as Bash Completion does not honor 'set expand-tilde'.
 _expand() { return 0; }
 
+source ~/git-completion.bash
+
 # Virtualenv and pip ########################################################
 
 export PYTHONPATH="" # Disable to work nicely with pip.
@@ -55,11 +58,42 @@ loadenv() {
     fi
 }
 
+# Extract files #############################################################
+function extract () {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)tar xvjf $1 && cd $(basename "$1" .tar.bz2) ;;
+            *.tar.gz)tar xvzf $1 && cd $(basename "$1" .tar.gz) ;;
+            *.tar.xz)tar Jxvf $1 && cd $(basename "$1" .tar.xz) ;;
+            *.bz2)bunzip2 $1 && cd $(basename "$1" /bz2) ;;
+            *.rar)unrar x $1 && cd $(basename "$1" .rar) ;;
+            *.gz)gunzip $1 && cd $(basename "$1" .gz) ;;
+            *.tar)tar xvf $1 && cd $(basename "$1" .tar) ;;
+            *.tbz2)tar xvjf $1 && cd $(basename "$1" .tbz2) ;;
+            *.tgz)tar xvzf $1 && cd $(basename "$1" .tgz) ;;
+            *.zip)unzip $1 && cd $(basename "$1" .zip) ;;
+            *.Z)uncompress $1 && cd $(basename "$1" .Z) ;;
+            *.7z)7z x $1 && cd $(basename "$1" .7z) ;;
+            *)echo "don't know how to extract '$1'..." ;;
+        esac
+    else
+        echo "'$1' is not a valid file!"
+    fi
+}
+
+
 # Fabric ####################################################################
 
 complete -o default -o nospace -W '$(fab --shortlist)' fab
 
 # Aliases ###################################################################
+alias trellpass="PASSWORD_STORE_DIR=$HOME/.trell-passwords pass "
+
+alias kb="/home/frissan/.extras/kb.sh"
+alias work="/home/frissan/.extras/work.sh"
+alias home="/home/frissan/.extras/home.sh"
+alias gb="setxkbmap -layout gb"
+alias se="setxkbmap -layout se"
 
 alias myip="ip addr | grep -E '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | \
             grep -v '127.0.0.1' | awk '{print \$2}' && curl my-ip.heroku.com"
@@ -86,6 +120,9 @@ alias djmm='./manage.py makemigrations'
 # Remove all .pyc and .pyo files in tree
 alias cleanpy="find . -name '*.py[oc]' -delete"
 
+# Upload images to img.yrl.io
+alias yrlimg="curl -H \"Authorization: Bearer $YRLIMG_SUBSCRIPTION\" -F \"image=@$1\" \"http://img.yrl.io/\""
+
 # Misc ######################################################################
 
 shopt -s checkwinsize
@@ -105,5 +142,4 @@ if [ -e "$HOME/.bashrc.local" ]; then
 fi
 
 # Audio ##############################################################
-
-pulseaudio --start
+export GOPATH=/home/frissan/code/go/
