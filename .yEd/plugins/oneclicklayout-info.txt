@@ -1,7 +1,0 @@
-#
-#Mon May 09 08:17:28 CEST 2016
-plugin.version.yed.min=3.14.4
-plugin.version=0.5
-plugin.accepted=true
-plugin.id=0c2ababb-bf6f-4538-bb54-72e33e5afd95
-plugin.version.yed.max=3.14.4

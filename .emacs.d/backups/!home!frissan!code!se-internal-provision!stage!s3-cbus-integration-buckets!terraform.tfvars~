@@ -1,0 +1,16 @@
+
+terragrunt = {
+  include {
+    path = "${find_in_parent_folders()}"
+  }
+
+  terraform {
+    source = "git::ssh://git@bitbucket.org/trelltech/se-internal-terraform-modules.git//s3_integration_buckets?ref=HEAD"
+  }
+
+}
+
+environment = "dev"
+cost_center = "LA005024"
+expiration = "90"
+username = "dev-compis-pipeline"

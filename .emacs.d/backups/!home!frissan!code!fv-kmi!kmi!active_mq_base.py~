@@ -1,0 +1,85 @@
+import requests
+import json
+import logging
+
+from proton.handlers import MessagingHandler
+from proton.reactor import Container
+from proton import Message
+
+from nameko.extensions import DependencyProvider
+
+
+class Sender(MessagingHandler):
+    def __init__(self, url, queue, body):
+        super(Sender, self).__init__()
+        self.url = url
+        self.queue = queue
+        self.body = body
+
+    def on_start(self, event):
+
+        self.sender = event.container.create_sender(self.url, self.queue)
+        self.receiver = event.container.create_receiver(
+            self.sender.connection, None, dynamic=True)
+
+    def on_link_opened(self, event):
+        logging.info('link opened')
+        if event.receiver == self.receiver:
+            self.next_request(event)
+
+    def on_message(self, event):
+        event.connection.close()
+
+    def next_request(self, event):
+        if self.receiver.remote_source.address:
+            message = Message(
+                body=self.body
+            )
+
+            self.sender.send(message)
+            self.sender.close()
+            event.connection.close()
+
+
+class ActiveMQ(object):
+    def __init__(self, hostname, queue, username, password, port=5671, protocol='amqps'):
+        self.queue = queue
+        self.hostname = hostname
+        self.port = port
+        self.protocol = protocol
+        self.username = username
+        self.password = password
+
+        self.url = self._build_amqp_uri()
+        self.queue = self._build_queue()
+
+    def publish_readings(self, seq_id, reading):
+        logging.info('Publishing reading seq_id {seq_id}, '
+                     'reading: {reading}'.format(
+                         seq_id=seq_id,
+                         reading=reading,
+                     ))
+
+        message = _format_message(reading)
+        self._queue_message(message)
+        logging.info('{seq_id} queued, message: {msg}'.format(
+            seq_id=seq_id,
+            msg=message,
+        ))
+
+    def _build_queue(self):
+        return 'queue://{q}'.format(q=self.queue)
+
+    def _build_amqp_uri(self):
+        return '{prtcl}://{usr}:{pw}@{host}:{port}'.format(
+            prtcl=self.protocol,
+            usr=self.username,
+            pw=self.password,
+            host=self.hostname,
+            port=self.port,
+        )
+
+    def _queue_message(self, message):
+        sender = Sender(self.url, self.queue, message)
+        container = Container(sender)
+        container.run()

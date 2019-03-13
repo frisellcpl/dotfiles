@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/appenv/bin/nameko run smart_heating.smart_heating --config /var/nameko/config.yml

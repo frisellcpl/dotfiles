@@ -1,0 +1,26 @@
+
+terragrunt = {
+  include {
+    path = "${find_in_parent_folders()}"
+  }
+
+  terraform {
+    source = "git::ssh://git@bitbucket.org/trelltech/se-internal-terraform-modules.git//rabbitmq_brokers?ref=HEAD"
+  }
+
+  dependencies {
+    paths = [
+      "../vpc",
+    ]
+  }
+}
+
+environment = "dev"
+vpc_name = "Dev VPC"
+cost_center = "LA005024"
+
+instance_type = "t2.nano"
+availability_zone = "eu-west-1a"
+autoscaling_group_min_size = 1
+autoscaling_group_max_size = 1
+autoscaling_group_desired_capacity = 1

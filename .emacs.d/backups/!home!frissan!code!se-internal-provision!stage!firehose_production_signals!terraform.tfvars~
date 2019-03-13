@@ -1,0 +1,17 @@
+
+terragrunt = {
+  include {
+    path = "${find_in_parent_folders()}"
+  }
+
+  terraform {
+    source = "git::ssh://git@bitbucket.org/trelltech/se-internal-terraform-modules.git//firehose?ref=HEAD"
+  }
+}
+
+environment = "dev"
+region = "eu-west-1"
+# naming convention is <source>-<data-stream-name>
+name = "compis-production-signals"
+
+buffer_interval = "900"

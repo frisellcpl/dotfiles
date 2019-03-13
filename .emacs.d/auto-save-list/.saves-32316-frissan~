@@ -1,0 +1,12 @@
+/home/frissan/code/fv-population-data-store/supervisord.conf
+/home/frissan/code/fv-population-data-store/#supervisord.conf#
+/home/frissan/code/trell-deploy/staging
+/home/frissan/code/trell-deploy/#staging#
+/home/frissan/code/trell-deploy/se-availability.yml
+/home/frissan/code/trell-deploy/#se-availability.yml#
+/home/frissan/code/fv-ansible-roles/availability/templates/supervisor-program.j2
+/home/frissan/code/fv-ansible-roles/availability/templates/#supervisor-program.j2#
+/home/frissan/code/fv-ansible-roles/availability/handlers/main.yml
+/home/frissan/code/fv-ansible-roles/availability/handlers/#main.yml#
+/home/frissan/.emacs.d/private/cache/recentf
+/home/frissan/.emacs.d/private/cache/#recentf#

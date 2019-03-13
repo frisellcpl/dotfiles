@@ -1,0 +1,26 @@
+
+terragrunt = {
+  include {
+    path = "${find_in_parent_folders()}"
+  }
+
+  terraform {
+    source = "git::ssh://git@bitbucket.org/trelltech/fv-terraform-modules.git//postgresql_database?ref=HEAD"
+  }
+
+  dependencies {
+    paths = [
+      "../vpc",
+    ]
+  }
+}
+
+environment = "stage"
+
+name = "kmi"
+username = "kmi"
+password = "xGu013ajdkBa417E7juA8DtbRSckDWMP"
+engine_version = "9.6.6"
+instance_class = "db.t2.micro"
+storage_type = "standard"
+allocated_storage = 5

@@ -1,0 +1,22 @@
+
+variable "region" {
+  type = "string"
+  default = "eu-central-1"
+}
+
+variable "environment" {
+  type = "string"
+}
+
+variable "cidr_block" {
+  type = "string"
+}
+
+
+provider "aws" {
+  region = "${var.region}"
+}
+
+terraform {
+  backend "s3" {}
+}

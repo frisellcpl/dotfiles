@@ -1,0 +1,19 @@
+#!/usr/bin/env ansible-playbook
+---
+
+- include: 'all.yml'
+
+- name: 'data_mqtt_broker'
+  hosts: 'localhost'
+  vars:
+    ssl_enabled: true
+    mqtt_cacert: './files/mqtt_cert/ca_certificate.pem'
+    mqtt_server_cert: './files/mqtt_cert/server_certificate.pem'
+    mqtt_server_key: './files/mqtt_cert/server_key.pem'
+    consul_agent: 'client'
+    prometheus_components: ['node_exporter']
+  roles:
+    - 'dnsmasq'
+    - 'consul'
+    - 'mqtt'
+    - 'prometheus'

@@ -1,0 +1,128 @@
+* 01/14
+** DONE Test the last fixes in availability
+** DONE Populate availability with data.
+** DONE Mobprogramming: Solve planned control for SCADA systems.
+** DONE Go through the data lake meeting and preparations
+** DONE Discuss and plan next step security update with Filip
+** DONE Plan KMI deployment
+**** Mailed: Should we really go for 600 units?
+**** Mailed: We need a new private link from our prod net.
+** DONE Write test plan for TA22
+** DONE Formulate next step Friendbase
+* 01/15
+** DONE Retest last changes in availability
+** DONE Follow up Johan Bergman
+** DONE Sit down with JD to plan this weeks work with data platform
+** DONE Formalize a Demo for Data Lake and plan implementation
+** DONE Talk with Gunnar concerning ES test schedule.
+Claes talks to Q and GB.
+** DONE Write a simple documentation and overview of the data lake architecture and data flow*
+** DONE Deploy KMI
++ Setup database
++ Verify kmi prod nomad job description
+-- dns
+-- database
+-- scale
++ Create cicd job
++ Launch kmi service
++ Verify its up and runnig
++ Copy new_kmi_reading and deploy in prod subnet with correct env vars.
+
+** DONE Investigate why old control signals and states persist after reboot
+Check logs from claes.
+Have a 27.4 with bettter logging.
+Just verify with FC API that no 27.4 exist.
+Upload and check logs. Reproduce by restartarting 116621.
+Check if state is stored and what the retrieved state from the database is.
+
+** DONE Discuss nomad/consul upgrade in stage with Filip
+* 01/16
+** DONE Talk with Anders about what requirements they have on data lake
+MaintPartner results or ComPIS data priorotized?
+** DONE Validate provision flow analog DUCs
++ If its an analog DUC we dont need protocol settings (client and items)
++ Find out what reset does.
+  It sets all old protocols to none.
++ Crete an analog base configuration
++ Make config entry nullable
++ Provision onewire fields with set_onewire_sensors if analog protocol.
+** DONE Finalize meeting with Gunnar regarding my priotization.
+I think it would be wise to put me into the data platform project mainly.
+While coordinating Allmannyttan, ES and Internal digitalization.
+** DONE Write license cost estimate on Unity and Network server hosting costs
+They have no cost indication nor any indication on resource usage on the actual code.
+** DONE Send more prod gateways in KMI
+126255 is on prod_test
+* 01/17
+** DONE Check FBS IT AWS security architecture
+
+How does integrations relate to CBUS etc, what is this highway?!
+** DONE Test TA22 with Niclas
++ Ladda upp 28.0 i stage.
++ Leta fram matpunktens thing
++ Uppgradera enhet
++ Kontrollera att shadow ar satt till analog.
+Ta fram id pa respektive sensor och mappa mot vart de sitter
+Skapa shadow manuellt
+Kor set onewire sensors fran lokal dator
+Kontrollera att data kommer in.
+Kontrollera att data kommer in i Grafana.
+Kontrollerra att stalldon skickar data.
+Skicka vaderprognos for valt observatorie
+Kontrollera att det ar NOP state.
+Testa att starta om.
+Kontrollera fortsatt NOP state.
+Skicka styrsignal.
+Kontrollera AOP state.
+Kontrollera att DUCen tar emot styrningen.
+Kontrollera att stalldon justeras.
+-------------------------
+** DONE Read up on SmartFoxServer and Unity integration.
+They have some sort of integration that actually seems quite decent. http://docs2x.smartfoxserver.com/ExamplesUnity/
+* 01/18
+** DONE Manage test result from TA22
+2019-01-17 14:14:04:097651 kelvin.tasks.analog_main ERROR Error initializing outdoor temp, waiting for new.Stacktrace: malformed node or string: <_ast.Name object at 0x75e91cb0>
+Test NOP writings in analog mode.
+** DONE Boka mote mellan nixu och faltcom
+** DONE Contact Debbie to check status from her meeting with Andreas.
+- Any updates on my ideas on my inclusion.
+- Schedule next meeting
+- Quick question about target platforms, mobile/web?
+** DONE Make a rough AWS cost estimate for Friendbase
+** DONE Summarize a job description for me in Friendbase
+* 01/21
+** DONE Upgrade consul and Nomad in stage.
+   DEADLINE: <2019-01-21 Mon>
+Trell office
+** DONE Put forth a plan for documentation together with Filip
+** TODO Handle weather payload error in Kelvin to see if it fixes the outdoor temp.
+Seems to work, need a bit more test.
+** DONE Test onewire sensor provisioning from Admin
+   DEADLINE: <2019-01-21 Mon>
+* 01/22
+** TODO Create data lake demo application
++ Create 2 empty noteboooks
+- Create one notebook with:
+  ++ Really simple SQL query through spark. (already existing)
+  https://data-stage-notebook.notebook.eu-central-1.sagemaker.aws/notebooks/Test.ipynb
+  -- One created training set
+  https://github.com/awslabs/amazon-sagemaker-examples/blob/master/advanced_functionality/parquet_to_recordio_protobuf/parquet_to_recordio_protobuf.ipynb
+  -- One applied easy model
+  https://github.com/awslabs/amazon-sagemaker-examples/blob/master/sagemaker-spark/pyspark_mnist/pyspark_mnist_kmeans.ipynb
+- Create a README with links to the recipies.
+
+** DONE Test NOP state analog duc configuration.
+   Check what we get from control_utils.get_control. t_safe should be zero in that case.
+   DEADLINE: <2019-01-22 Tue>
+** TODO Security FC -> Nixu
+** DONE Review styrgrupp presentation. Create action plan on possible changes.
+Meeting is held at 4th feb.
+** DONE Discuss FV Oslo cooperation with Jimmy
+De har tagit det ett tag ett steg langre genom att faktiskt skapa datakallor och minska dubbellagring. Snyggt!
+* 01/23
+** TODO Draw next level Architecture Friendbase.
+   DEADLINE: <2019-01-21 Mon>
+Include more details. Like actual plattform choices, hosting alternatives etc.
+  DEADLINE: <2019-01-28 Mon>
+** TODO Start documentation work
+** TODO Check Leos Siemens IOT gateway

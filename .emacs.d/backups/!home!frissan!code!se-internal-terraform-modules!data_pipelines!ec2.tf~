@@ -1,0 +1,76 @@
+
+data "aws_subnet" "a_private" {
+  filter {
+    name = "tag:Name"
+    values = ["${var.environment}-a-private"]
+  }
+}
+
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  owners = ["099720109477"]
+
+  filter {
+    name = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  filter {
+    name = "architecture"
+    values = ["x86_64"]
+  }
+
+  filter {
+    name = "image-type"
+    values = ["machine"]
+  }
+
+  filter {
+    name = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-*"]
+  }
+}
+
+data "template_file" "user_data" {
+  template = "${file("${path.module}/../_shared-files/user_data.sh")}"
+  vars {
+    environment = "${var.environment}"
+    playbook = "mqtt_pipeline"
+  }
+}
+
+resource "aws_launch_configuration" "main" {
+  name_prefix = "${var.environment}-mqtt_pipelines-"
+  image_id = "${data.aws_ami.ubuntu.id}"
+  instance_type = "${var.instance_type}"
+  security_groups = ["${aws_security_group.instances.id}"]
+  iam_instance_profile = "${aws_iam_instance_profile.main.arn}"
+  user_data = "${data.template_file.user_data.rendered}"
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+resource "aws_autoscaling_group" "main" {
+  name = "${var.environment}-mqtt-pipelines"
+  launch_configuration = "${aws_launch_configuration.main.name}"
+  vpc_zone_identifier = ["${data.aws_subnet.a_private.id}"]
+  availability_zones = ["${var.availability_zone}"]
+  min_size = "${var.autoscaling_group_min_size}"
+  max_size = "${var.autoscaling_group_max_size}"
+  desired_capacity = "${var.autoscaling_group_desired_capacity}"
+  force_delete = false
+  health_check_type = "EC2"
+  tags = [
+    {
+      key = "Name"
+      value = "${var.environment}-mqtt-pipeline"
+      propagate_at_launch = true
+    }
+  ]
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}

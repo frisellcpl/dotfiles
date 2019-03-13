@@ -1,0 +1,15 @@
+
+terragrunt = {
+  include {
+    path = "${find_in_parent_folders()}"
+  }
+
+  terraform {
+    source = "git::ssh://git@bitbucket.org/trelltech/fv-terraform-modules.git//vpc?ref=HEAD"
+  }
+}
+
+environment = "dev"
+cidr_block = "10.129.66.0/25"
+route_table_id = ""
+vpc_id = ""

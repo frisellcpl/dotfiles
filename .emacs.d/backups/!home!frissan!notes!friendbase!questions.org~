@@ -1,0 +1,36 @@
+* Questions, initial thoughts
+** Documentation
+- Is there any documentation on the infrastructure?
+- Is there any documentation on the code?
+- Is there any SmartFox server, game backend. Configuration etc.
+
+- What does
+ -- Throughout the game you will be able create to your own levels with a built-in level creator.
+    Items, outfits and personality characteristics can be collected, bought and/or earned while playing the game.
+    -- Achievements.
+ -- Safety tools and admin tools
+    -- Reporting.
+    -- User management.
+    -- Profanity filter.
+ mean?
+
+** Project and staffing costs
+- Is there room for a game developer in house. Mainly thinking of a Unity developer or similar.
+- What is accepted infrastructural costs? Is there a budget of some sort?
+  -- License Costs
+     6000kr all in all.
+  -- Infrastructure
+     3500kr/month
+
+** Game related questions
+- What is the overall game design? Session based (i.e. , real time, room based real time, open world)?
+  Might be a combination of rooms for mini games and a large more open world.
+- Ska vi ta ett mote med Andreas som en del av Roadmap. Viktigt att fa hans buy-in.
+- Kolla pa hur smartfoxserver relaterar till Unity.
+
+### Timeplan
+Tagit beslut om nyemission. Innan februari utgang.
+1-2 spelutvecklare. Bade backend, client.
+1 grafiker.
+
+Systemarkitekt och natverksprogrammering.

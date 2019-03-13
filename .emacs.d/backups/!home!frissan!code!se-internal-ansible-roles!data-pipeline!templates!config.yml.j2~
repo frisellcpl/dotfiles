@@ -1,0 +1,5 @@
+AMQP_URI: amqp://${RMQ_USER:guest}:${RMQ_PASSWORD:guest}@${RMQ_HOST:localhost}
+REGION: ${AWS_REGION:eu-west-1}
+FIREHOSE:
+  STREAMS:
+    compis-production: ${COMPIS-PROD-STREAM:dev-compis-production-signals-firehose}

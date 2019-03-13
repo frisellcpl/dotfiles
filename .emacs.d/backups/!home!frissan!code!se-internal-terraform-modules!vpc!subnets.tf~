@@ -1,0 +1,30 @@
+
+resource "aws_subnet" "a_private" {
+  vpc_id = "${var.vpc_id}"
+  availability_zone = "${var.region}a"
+  cidr_block = "${cidrsubnet(var.cidr_block, 2, 0)}"
+
+  tags {
+    Name = "${var.environment}-a-private"
+  }
+}
+
+resource "aws_subnet" "b_private" {
+  vpc_id = "${var.vpc_id}"
+  availability_zone = "${var.region}b"
+  cidr_block = "${cidrsubnet(var.cidr_block, 2, 1)}"
+
+  tags {
+    Name = "${var.environment}-b-private"
+  }
+}
+
+resource "aws_subnet" "c_private" {
+  vpc_id = "${var.vpc_id}"
+  availability_zone = "${var.region}c"
+  cidr_block = "${cidrsubnet(var.cidr_block, 2, 2)}"
+
+  tags {
+    Name = "${var.environment}-c-public"
+  }
+}

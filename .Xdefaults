@@ -1,69 +1,66 @@
-URxvt.font:     xft:DejaVu Sans Mono:size=11
-URxvt.boldFont: xft:DejaVu Sans Mono:bold:size=11
+! urxvt
 
-urxvt*termName:         rxvt
-urxvt*background:       #0c1014
-urxvt*foreground:       #99d1ce
-urxvt*scrollBar:        false
-urxvt*matcher.button:   1
-urxvt.transparent:    false
-urxvt*allow_bold:    true
+URxvt*geometry: 115x40
+URxvt*font: xft:DejaVu Sans Mono:pixelsize=14:antialias=true:hinting=true
+URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=14:antialias=true:hinting=true
+URxvt*depth: 24
+URxvt*borderless: 1
+URxvt*scrollBar: false
+URxvt*saveLines: 2000
+URxvt.transparent: false
+URxvt*.shading: 10
 
-Xft*dpi:                96
-Xft*antialias:          true
-Xft*hinting:            full
+! Meta modifier for keybindings
+!URxvt.modifier: super
 
-URxvt*geometry: 85x16
-URxvt*fading:        0
-URxvt*tintColor:     #ffffff
-URxvt*shading:        0
-URxvt*inheritPixmap:     False
+!! perl extensions
+URxvt.perl-ext:             default,url-select,clipboard
 
-! black + red
-!urxvt*color0:     #3f3f3f
-urxvt*color0:      #0c1014
-urxvt*color1:      #c23127
-! green + yellow
-urxvt*color2:      #2aa889
-urxvt*color3:      #edb443
-! blue + purple
-urxvt*color4:      #195466
-urxvt*color5:      #4e5166
-! cyan + white
-urxvt*color6:      #33859e
-urxvt*color7:      #99d1ce
-! bright-black + bright-red
-urxvt*color8:      #11151c
-urxvt*color9:      #d26937
-! bright-green + bright-yellow
-urxvt*color10:     #2aa889
-urxvt*color11:     #245361
-! bright-blue + bright-purple
-urxvt*color12:     #195466
-urxvt*color13:     #4e5166
-! bright-cyan + bright-white
-urxvt*color14:     #599cab
-urxvt*color15:     #d3ebe9
-!}}}
+! url-select (part of urxvt-perls package)
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.autocopy:  true
+URxvt.url-select.button:    2
+URxvt.url-select.launcher:  firefox
+URxvt.url-select.underline: true
 
-! xscreensaver ---------------------------------------------------------------
+! Nastavuje kopirovani
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
 
-!general dialog box (affects main hostname, username, password text)
-xscreensaver.Dialog.foreground:         #7f8f9f
-xscreensaver.Dialog.background:         #0c0d0e
-xscreensaver.Dialog.topShadowColor:     #0c0d0e
-xscreensaver.Dialog.bottomShadowColor:  #0c0d0e
-xscreensaver.Dialog.Button.foreground:  #0c0d0e
-xscreensaver.Dialog.Button.background:  #7f8f9f
-!username/password input box and date text colour
-xscreensaver.Dialog.text.foreground:    #0c0d0e
-xscreensaver.Dialog.text.background:    #7f8f9f
-xscreensaver.Dialog.internalBorderWidth:24
-xscreensaver.Dialog.borderWidth:        20
-xscreensaver.Dialog.shadowThickness:    2
-!timeout bar (background is actually determined by Dialog.text.background)
-xscreensaver.passwd.thermometer.foreground:  #7f8f9f
-xscreensaver.passwd.thermometer.background:  #0c0d0e
-xscreensaver.passwd.thermometer.width:       10
-!datestamp format--see the strftime(3) manual page for details
-xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
+! disable the stupid ctrl+shift 'feature'
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+
+! Solarized light, but changed text color to the darker #484848
+! http://ethanschoonover.com/solarized
+
+*background:              #fdf6e3
+*foreground:              #4c4c4c
+*cursorColor:             #586e75
+*pointerColorBackground:  #93a1a1
+*pointerColorForeground:  #586e75
+
+*color0:                  #eee8d5
+*color1:                  #dc322f
+*color2:                  #859900
+*color3:                  #b58900
+*color4:                  #268bd2
+*color5:                  #d33682
+*color6:                  #2aa198
+*color7:                  #073642
+*color9:                  #cb4b16
+*color8:                  #fdf6e3
+*color10:                 #93a1a1
+*color11:                 #839496
+*color12:                 #484848
+*color13:                 #6c71c4
+*color14:                 #586e75
+*color15:                 #002b36
+
+
+
+
+
+
+

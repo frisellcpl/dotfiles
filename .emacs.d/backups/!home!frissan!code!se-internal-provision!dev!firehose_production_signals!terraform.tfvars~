@@ -1,0 +1,16 @@
+
+terragrunt = {
+  include {
+    path = "${find_in_parent_folders()}"
+  }
+
+  terraform {
+    source = "git::ssh://git@bitbucket.org/trelltech/fv-terraform-modules.git//firehose?ref=HEAD"
+  }
+}
+
+environment = "stage"
+
+name = "subplant"
+
+buffer_interval = "900"

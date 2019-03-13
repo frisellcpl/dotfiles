@@ -1,0 +1,11 @@
+#!/usr/bin/env ansible-playbook
+---
+
+- include: 'all.yml'
+
+- name: 'mqtt_broker'
+  hosts: 'localhost'
+  vars:
+    ssl_enabled: no
+  roles:
+    - 'mqtt'

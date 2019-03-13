@@ -1,0 +1,30 @@
+---
+
+sudo_groupname: 'admin'
+sudo_filename: 'admin'
+
+users:
+- name: 'admin'
+  groups: 'admin'
+  uid: 1100
+  gid: 1100
+  shell: '/bin/bash'
+  ssh_key:
+    pub: '{{ platform_ssh_key_pub }}'
+    priv: '{{ platform_ssh_key_priv }}'
+
+hostname_hostname: '{{ ansible_ec2_hostname }}'
+
+consul_bind_addr: '{{ ansible_ec2_local_ipv4 }}'
+consul_datacenter: 'eu-central-1'
+consul_node_name: '{{ ansible_ec2_hostname }}'
+consul_bootstrap_expect: 3
+consul_retry_join_region: 'eu-central-1'
+consul_autopilot_redundancy_zone_tag: 'eu-central-1a'
+
+nomad_bind_addr: '0.0.0.0'
+nomad_datacenter: 'eu-central-1'
+nomad_name: '{{ ansible_ec2_hostname }}'
+nomad_consul_address: '127.0.0.1:8500'
+nomad_bootstrap_expect: 3
+nomad_driver_whitelist: 'docker'

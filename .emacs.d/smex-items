@@ -1,0 +1,44 @@
+
+;; ----- smex-history -----
+(
+ term
+ buffer-menu
+ markdown-mode
+ elisp-byte-code-mode
+ lisp-mode
+ org-mode
+ recover-file
+)
+
+;; ----- smex-data -----
+(
+ (projectile-mode . 2)
+ (which-key-show-full-keymap . 1)
+ (neotree . 1)
+ (neotree-dir . 1)
+ (counsel-projectile-switch-to-buffer . 1)
+ (check-parens . 1)
+ (recover-file . 3)
+ (project-find-file . 1)
+ (counsel-projectile-find-file . 1)
+ (highlight-indentation-mode . 2)
+ (package-refresh-contents . 2)
+ (package-install . 3)
+ (csharp-mode . 1)
+ (omnisharp-install-server . 1)
+ (omnisharp-start-omnisharp-server . 2)
+ (comment-region . 2)
+ (expand-region-abbrevs . 1)
+ (org-todo-list . 3)
+ (org-todo . 1)
+ (org-todo-yesterday . 1)
+ (org-mode . 2)
+ (lisp-mode . 1)
+ (elisp-byte-code-mode . 1)
+ (markdown-preview . 6)
+ (markdown-do . 1)
+ (markdown-open . 2)
+ (markdown-mode . 2)
+ (buffer-menu . 1)
+ (term . 1)
+)

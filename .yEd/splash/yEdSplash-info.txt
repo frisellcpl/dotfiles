@@ -1,2 +1,0 @@
-#Fri Aug 12 08:58:55 CEST 2016
-splash.version=2

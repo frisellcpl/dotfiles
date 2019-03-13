@@ -1,0 +1,79 @@
+
+data "aws_vpc" "main" {
+  filter {
+    name = "tag:Name"
+    values = ["${var.environment}"]
+  }
+}
+
+
+data "aws_security_group" "bastion_host_instances" {
+  filter {
+    name = "tag:Name"
+    values = ["mgmt-bastion-host-instances"]
+  }
+}
+
+resource "aws_security_group" "instances" {
+  vpc_id = "${data.aws_vpc.main.id}"
+  name = "${var.environment}-mqtt-broker-instances"
+  description = "${var.environment} RabbitMQ MQTT Server Instances"
+
+  tags {
+    Name = "${var.environment}-mqtt-broker-instances"
+  }
+}
+
+resource "aws_security_group_rule" "instances_ingress_amqp" {
+  security_group_id = "${aws_security_group.instances.id}"
+  type = "ingress"
+  protocol = "tcp"
+  from_port = 5672
+  to_port = 5672
+  cidr_blocks = ["${data.aws_vpc.main.cidr_block}"]
+}
+
+resource "aws_security_group_rule" "instances_ingress_webmgmt" {
+  security_group_id = "${aws_security_group.instances.id}"
+  type = "ingress"
+  protocol = "tcp"
+  from_port = 15672
+  to_port = 15672
+  cidr_blocks = ["0.0.0.0/0"]
+}
+
+resource "aws_security_group_rule" "instances_ingress_mqtt" {
+  security_group_id = "${aws_security_group.instances.id}"
+  type = "ingress"
+  protocol = "tcp"
+  from_port = 1883
+  to_port = 1883
+  cidr_blocks = ["${data.aws_vpc.main.cidr_block}"]
+}
+
+resource "aws_security_group_rule" "instances_ingress_mqtts" {
+  security_group_id = "${aws_security_group.instances.id}"
+  type = "ingress"
+  protocol = "tcp"
+  from_port = 8883
+  to_port = 8883
+  cidr_blocks = ["0.0.0.0/0"]
+}
+
+resource "aws_security_group_rule" "instances_ingress_ssh" {
+  security_group_id = "${aws_security_group.instances.id}"
+  type = "ingress"
+  protocol = "tcp"
+  from_port = 22
+  to_port = 22
+  source_security_group_id = "${data.aws_security_group.bastion_host_instances.id}"
+}
+
+resource "aws_security_group_rule" "instances_egress_all" {
+  security_group_id = "${aws_security_group.instances.id}"
+  type = "egress"
+  protocol = "-1"
+  from_port = 0
+  to_port = 0
+  cidr_blocks = ["0.0.0.0/0"]
+}
