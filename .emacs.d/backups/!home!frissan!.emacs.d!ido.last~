@@ -9,7 +9,7 @@
  ("/home/frissan/code/fv-population-data-store/pds/" . "tech/")
  ("/home/frissan/code/fv-population-data-store/" . "pds/")
  ("/home/frissan/code/fv-kmi/db/" . "versions/")
- ("/home/frissan/code/fv-kmi/" . "db/")
+ ("/home/frissan/code/fv-kmi/" . "kmi/")
  ("/home/frissan/code/fv-smartheating/" . "smart_heating/")
  ("/home/frissan/code/fv-provision/prod/" . "postgresql_kmi/")
  ("/home/frissan/code/fv-availability/availability/templates/" . "aktpm/")
@@ -22,31 +22,33 @@
  ("/home/frissan/code/fv-kelvin/" . "kelvin/")
  ("/home/frissan/notes/" . "se/")
  ("/home/frissan/.config/" . "i3/")
- ("/home/frissan/code/" . "ivPID/")
+ ("/home/frissan/code/" . "fv-kelvin/")
  ("/home/frissan/Downloads/emacs.d/" . "elisp/")
- ("/home/frissan/" . "code/")
+ ("/home/frissan/" . ".emacs.d/")
  ("/home/frissan/.emacs.d/elpa/" . "better-defaults-20170614.404/")
  ("/home/frissan/.emacs.d/" . "elisp/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
- "/home/frissan/code/ivPID/"
- "/home/frissan/code/fv-kelvin/kelvin/"
+ "/home/frissan/.emacs.d/"
+ "/home/frissan/.emacs.d/elisp/"
+ "/home/frissan/Downloads/"
  "/home/frissan/code/fv-kelvin/kelvin/meterbus/client/"
- "/home/frissan/code/fv-kelvin/kelvin/meterbus/"
  "/home/frissan/code/fv-kelvin/kelvin/tasks/"
- "/home/frissan/code/fv-kmi/db/"
+ "/home/frissan/code/fv-kelvin/kelvin/meterbus/"
+ "/home/frissan/code/fv-kelvin/kelvin/"
+ "/home/frissan/code/fv-kmi/"
+ "/home/frissan/code/fv-kelvin/"
  "/home/frissan/code/fv-kmi/kmi/"
+ "/home/frissan/code/ivPID/"
+ "/home/frissan/code/fv-kmi/db/"
  "/home/frissan/code/se-internal-provision/stage/vpc/"
  "/home/frissan/documents/"
- "/home/frissan/Downloads/"
- "/home/frissan/.emacs.d/elisp/"
  "/home/frissan/notes/se/"
  "/home/frissan/code/fv-population-data-store/pds/tech/"
  "/home/frissan/code/fv-provision/stage/nomad_clients/"
  "/home/frissan/code/fv-kmi/db/versions/"
- "/home/frissan/code/fv-kmi/"
  "/home/frissan/code/fv-population-data-store/"
  "/home/frissan/code/fv-timeseries/"
  "/home/frissan/code/fv-smartheating/"
@@ -65,7 +67,6 @@
  "/home/frissan/"
  "/home/frissan/code/dotnettest/"
  "/home/frissan/code/dotnettest/myApp/"
- "/home/frissan/.emacs.d/"
  "/home/frissan/.config/rofi/"
  "/home/frissan/code/test/"
  "/home/frissan/Downloads/emacs.d/"
@@ -76,37 +77,47 @@
 
 ;; ----- ido-work-file-list -----
 (
- "test_pid.py"
- "__init__.py"
+ "init.el"
+ "base-theme.el"
+ "base-extensions.el"
+ "kelvin.debug.log.1"
+ "kelvin.debug(3).log"
  "serial.py"
- "base.py"
+ "kelvin.debug(2).log"
  "meterbus_main.py"
- "main.py"
- "modbus_main.py"
- "models.py"
- "active_mq_base.py"
- "service.py"
+ "__init__.py"
+ "kelvin.debug(1).log"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/home/frissan/.emacs.d/" (23693 16851 270762 605000) "snippets/" "ido.last" "./" "elisp/" "auto-save-list/" "private/" ".custom.el" "elpa/" "smex-items" "../" "url/" "init.el" "backups/")
+
+ ("/home/frissan/.emacs.d/elisp/" (23693 16807 38897 585000) "lang-web.el" "base-global-keys.el" "base-functions.el" "lang-dotnet.el" "./" "lang-javascript.el" "base-extensions.el" "lang-rust.el" "lang-python.el" "../" "base-theme.el" "base.el")
+
+ ("/home/frissan/" (23693 7431 12908 899000) "Templates/" ".sudo_as_admin_successful" ".ICEauthority" ".profile" "solarc-theme/" "Videos/" ".cache/" "Downloads/" "Desktop/" "./" ".aws/" ".emacs.d/" ".themes/" ".gnupg/" "Public/" ".wget-hsts" ".ssh/" "Pictures/" ".icons/" ".bashrc" "vimix-gtk-themes/" ".mozilla/" "Music/" "../" ".bash_logout" "vimix-icon-theme/" "Documents/" ".config/" ".bash_history" "dotfiles/" ".local/")
+
+ ("/home/frissan/.emacs.d/elpa/" (23693 6690 827791 47000) "dash-20180910.1856/" "solarized-theme-20181030.1912/" "s-20180406.808/" "yaml-mode-20180409.607/" "highlight-indentation-20181204.839/" "which-key-20181114.1432/" "dash-functional-20180107.1618/" "htmlize-20180923.1829/" "web-mode-20181214.658/" "csharp-mode-20181011.718/" "neotree-20181121.2026/" "pyvenv-20181219.1526/" "company-tern-20161004.1847/" "smex-20151212.2209/" "ac-html-bootstrap-20160302.1701/" "undo-tree-0.6.5.signed" "pyenv-mode-20170801.2348/" "hcl-mode-20170107.827/" "yasnippet-20181015.1212/" "./" "emmet-mode-20180613.341/" "exec-path-from-shell-20180324.204/" "epl-20180205.2049/" "js-comint-20181106.2238/" "counsel-projectile-20181226.1514/" "pythonic-20180920.2315/" "js2-refactor-20180502.1042/" "gnupg/" "markdown-mode-20181229.1430/" "spacemacs-theme-20181107.1725/" "archives/" "smartparens-20181212.1956/" "company-20181221.1538/" "expand-region-20180817.1134/" "ac-html-angular-20151225.719/" "swiper-20181212.1655/" "bind-key-20180513.430/" "counsel-20181223.325/" "omnisharp-20181206.21/" "flycheck-20181214.1048/" "web-completion-data-20160318.848/" "elpy-20181214.2233/" "auto-complete-20170125.245/" "undo-tree-0.6.5/" "f-20180106.922/" "company-web-20180402.1155/" "web-mode-edit-element-20181214.1309/" "js2-mode-20180724.801/" "multiple-cursors-20180913.1237/" "pip-requirements-20181027.1629/" "use-package-20181119.2350/" "../" "projectile-20181218.2023/" "popup-20160709.1429/" "simple-httpd-20180528.1603/" "tern-20181108.722/" "rust-mode-20181218.1108/" "pkg-info-20150517.1143/" "find-file-in-project-20181217.246/" "impatient-mode-20181002.1231/" "better-defaults-20170614.404/" "ivy-20181223.2002/" "py-autopep8-20160925.1052/")
+
+ ("/home/frissan/Downloads/" (23681 14331 956691 254000) "Deklaration_208502768.pdf" "faltcom_report_2019-02-28(2).pdf" "Bränslemixmatris.xlsx" "f5vpn-7170.2018.0626.1-1-x86_64.pkg.tar.xz" "__MACOSX/" "trellvpn/" "Copy of Violdata.csv" "Installationer_20190227_1325.csv" "kelvin.db.sqlite3" "s3_compis_integration_landing.png" "kelvin.debug.log" "Blank Diagram.png" "Screenshot_2019-01-13 asdasddsa.png" "kmi_new_readings-c2f83e93-2bb0-4cc0-be5e-110c1fac924f" "Screenshot_2019-01-14 Inkorgen (6) - johan trell se - Trell technologies AB e-post.png" "#fbaws.pem#" "Ref Architecture DLB (1).pptx" "{5984e8a4-b593-11e5-ad1f-ac88bb8e7f8b}/" "JM Presentation v 1.3.pdf" "kelvin.debug(1).log" "uber-trans.PNG" "faltcom_report_2019-02-28.pdf" "Invoice_201802.pdf" "Invoice_SE_HSB_BSDT_4401635021_2018-10-30.pdf" "kelvin.debug(3).log" "DeepinScreenshot_select-area_20190228093125.png" "12h-05-03.csv" "7days-all-mids.xlsx" "EN18357-3-02-18_CMU1000.pdf" "DSM as a standalone.pdf" "stage-firehose-subplant-stream-1-2019-02-10-18-12-40-f35cb4c1-4b3e-4445-9b87-7152da98d33c" "kelvin.debug(2).log" "DeepinScreenshot_select-area_20190219111625.png" "credentials.csv" "Install.sh" "Bränslerapport 2018-10-22.csv" ".#fbaws.pem" "dsm_analysis/" "frissan.private.key" "kelvin.debug.log.1" "keys.tar.gz" "Ref Architecture DLB.pptx" "SkypeMeetingsApp.msi" "kelvin.debug.log_13322.1" "trellpass.private.key" "Firefox_Screenshot_2019-01-12T10-28-44.045Z.png" "ubuntu-18.04.1-desktop-amd64.iso" "fbaws.pem" "test_lundaman.csv" "kelvin.db(1).sqlite3" "krav inför MVP 190113_3.pptx" "hotels_leetspeak.pdf" "availpass.txt" "test_bofit.csv" "mqtt_amqp.png" "zoom_x86_64.pkg.tar.xz" "Programstyrelsen IntFsa.pptx" "Faltcom.postman_collection.json" "test_violdata.csv" "Installationer_20190227_1325(1).csv" "./" ".~lock.test_bofit.csv#" "../" "SE as BSP.pptx" "kraken.private.key" "faltcom_report_2019-02.pdf")
+
+ ("/home/frissan/code/fv-kelvin/kelvin/meterbus/client/" (23681 678 637300 738000) "serial.py" "mock.py" "./" "../" "__init__.py" "base.py")
+
+ ("/home/frissan/code/fv-kelvin/" (23680 58762 797464 503000) ".git/" "kelvin/" "tests/" "local/" "Nonestored_shadow_28.7.1.pkl" ".gitmodules" "env/" "run.py" "aws.py" "build/" "setup.cfg" "README.md" "one.yml" "submodules/" "tasks/" ".gitignore" "requirements/" "libs/" "./" "../")
+
+ ("/home/frissan/code/fv-kelvin/kelvin/" (23680 58753 254131 589000) "main.py" "meterbus/" "control_utils.py" "modbus/" "aws_iot_utils.py" "cli_args.py" "config.py" "cli.py" "kmi.py" "http/" "types.py" "tasks/" "storage_utils.py" "filters.py" "settings.py" "./" "mqtt/" "../" "__init__.py" "db.py")
+
+ ("/home/frissan/code/fv-kelvin/kelvin/tasks/" (23680 58723 917466 210000) "heat_control_state_main.py" "storage_main.py" "modbus_main.py" "duc_main.py" "boot_main.py" "publish_main.py" "aws_iot_main.py" "http_main.py" "analog_main.py" "./" "../" "__init__.py" "meterbus_main.py")
+
+ ("/home/frissan/code/fv-kelvin/kelvin/meterbus/" (23679 34758 40759 979000) "proto.py" "client/" "./" "../" "__init__.py")
+
+ ("/home/frissan/code/fv-kmi/" (23678 23332 573906 674000) ".git/" "tests/" "kmi.stage.nomad" "README.markdown" "kmi/" "local_config.yml" "db/" "kmi.prod.nomad" "docker-compose.yml" "env/" "config.yml" "requirements.txt" "awslogs.conf" "Dockerfile" "Makefile" "run.sh" ".gitignore" "supervisord.conf" "./" "../")
+
+ ("/home/frissan/code/fv-kmi/kmi/" (23673 19628 790794 58000) "dependencies.py" "active_mq_base.py" "#mock.py#" "__pycache__/" "service.py" "mock.py" "active_mq.py" "database.py" "./" "../" "__init__.py" ".#mock.py" "#active_mq_base.py#")
+
  ("/home/frissan/code/ivPID/" (23671 60815 472898 311000) ".git/" "LICENSE" "test_pid.py" "__pycache__/" ".idea/" "env/" "README.md" "PID.py" "docs/" "./" "../")
 
  ("/home/frissan/code/" (23671 60707 696236 408000) "dotnettest/" "ivPID/" "fv-provision/" "fv-timeseries/" "test/" "fv-smartheating/" "fv-weather/" "trell-ansible-roles/" "fv-signal-control/" "fv-lambda-rabbit/" "se-internal-terraform-modules/" "fv-ts-sampledata/" "fv-configure/" "fv-wdl-cleaner/" "se-internal-configure/" "fv-population-data-store/" "fv-kelvin/" "dhcp_options.tf" "ampqp-firehose-lab/" "se-internal-provision/" "fv-availability/" "fv-ansible-roles/" "se-internal-data-pipeline/" "se-internal-ansible-roles/" "trell-deploy/" "./" "../" "fv-kmi/" "fv-terraform-modules/")
-
- ("/home/frissan/" (23671 61423 242871 477000) "fbsvpn/" "pictures/" "exergiaws" ".Xdefaults" ".aws/" ".bash_completion" "density_20190227.csv" ".node-gyp/" ".lesshst" "lol" ".i3status.conf" "mnt/" ".yEd/" "share/" ".esd_auth" ".xbindkeysrc" ".psql_history" ".Xmodmap" ".emacs.d/" ".ansible/" "notes/" ".bash_logout" ".mozilla/" ".bash_history" "documents/" ".bashrc" ".install4j" ".fehbg" ".pki/" ".password-store/" ".xinitrc" ".local/" ".fv-passwords/" ".screenlayout/" ".wget-hsts" "emacs_cfg_old/" ".swt/" "frissan.png" "Downloads/" ".mono/" ".gnupg/" ".python_history" ".gitconfig" "code/" ".omnisharp/" "sentian-data/" ".dotnet/" ".terraform.d/" ".trellvpn/" ".Xauthority" "VirtualBox VMs/" ".cache/" ".trell-passwords/" ".ssh/" ".nuget/" ".bash_profile" "Desktop/" ".java/" "exergiaws.pub" ".xscreensaver" "transient/" ".npm/" ".gpgkeys/" ".config/" ".templateengine/" "./" ".F5Networks/" "../" ".Xdefaults.old" "postify.log")
-
- ("/home/frissan/Downloads/" (23671 58892 899649 551000) "Deklaration_208502768.pdf" "faltcom_report_2019-02-28(2).pdf" "Bränslemixmatris.xlsx" "f5vpn-7170.2018.0626.1-1-x86_64.pkg.tar.xz" "__MACOSX/" "trellvpn/" "Copy of Violdata.csv" "Installationer_20190227_1325.csv" "s3_compis_integration_landing.png" "kelvin.debug.log" "Blank Diagram.png" "Screenshot_2019-01-13 asdasddsa.png" "kmi_new_readings-c2f83e93-2bb0-4cc0-be5e-110c1fac924f" "Screenshot_2019-01-14 Inkorgen (6) - johan trell se - Trell technologies AB e-post.png" "#fbaws.pem#" "Ref Architecture DLB (1).pptx" "{5984e8a4-b593-11e5-ad1f-ac88bb8e7f8b}/" "uber-trans.PNG" "faltcom_report_2019-02-28.pdf" "Invoice_201802.pdf" "Invoice_SE_HSB_BSDT_4401635021_2018-10-30.pdf" "DeepinScreenshot_select-area_20190228093125.png" "EN18357-3-02-18_CMU1000.pdf" "DSM as a standalone.pdf" "stage-firehose-subplant-stream-1-2019-02-10-18-12-40-f35cb4c1-4b3e-4445-9b87-7152da98d33c" "DeepinScreenshot_select-area_20190219111625.png" "credentials.csv" "Install.sh" "Bränslerapport 2018-10-22.csv" ".#fbaws.pem" "frissan.private.key" "keys.tar.gz" "Ref Architecture DLB.pptx" "kelvin.debug.log_13322.1" "trellpass.private.key" "Firefox_Screenshot_2019-01-12T10-28-44.045Z.png" "ubuntu-18.04.1-desktop-amd64.iso" "fbaws.pem" "krav inför MVP 190113_3.pptx" "hotels_leetspeak.pdf" "availpass.txt" "mqtt_amqp.png" "Programstyrelsen IntFsa.pptx" "Faltcom.postman_collection.json" "./" "../" "SE as BSP.pptx" "kraken.private.key" "faltcom_report_2019-02.pdf")
-
- ("/home/frissan/code/fv-kelvin/kelvin/meterbus/client/" (23671 55757 989787 522000) "serial.py" "mock.py" "./" "../" "__init__.py" "base.py")
-
- ("/home/frissan/code/fv-kelvin/kelvin/" (23671 56754 463076 794000) "main.py" "meterbus/" "control_utils.py" "modbus/" "aws_iot_utils.py" "cli_args.py" "config.py" "cli.py" "kmi.py" "http/" "types.py" "tasks/" "storage_utils.py" "filters.py" "settings.py" "./" "mqtt/" "../" "__init__.py" "db.py")
-
- ("/home/frissan/code/fv-kelvin/kelvin/tasks/" (23671 54929 303157 444000) "heat_control_state_main.py" "#analog_main.py#" "storage_main.py" "modbus_main.py" "duc_main.py" "boot_main.py" "publish_main.py" "aws_iot_main.py" "http_main.py" "analog_main.py" "./" "../" "__init__.py" "meterbus_main.py")
-
- ("/home/frissan/code/fv-kelvin/kelvin/meterbus/" (23599 7633 899887 536000) "proto.py" "client/" "./" "../" "__init__.py")
-
- ("/home/frissan/.emacs.d/" (23670 27739 343257 953000) "ido.last" "private/" "backups/" "snippets/" ".custom.el" "url/" "auto-save-list/" "smex-items" "elpa/" ".cache/" "init.el" "./" "../" "elisp/")
 
  ("/home/frissan/code/fv-availability/availability/" (23634 43106 298239 833000) "migrations/" "templates/" "middleware.py" "models.py" "__pycache__/" "chart_data.py" "poc.py" "admin.py" "wsgi.py" "urls.py" "views.py" "config/" "settings.py" "./" "../" "__init__.py" "forms.py")
 
@@ -120,19 +131,11 @@
 
  ("/home/frissan/code/fv-population-data-store/pds/tech/" (23630 65013 241340 733000) "migrations/" "mocks.py" "test_details.py" "apps.py" "models.py" "exceptions.py" "__pycache__/" "test_measurepoint.py" "handlers.py" "admin.py" "urls.py" "test_duc_configuration.py" "views.py" "test_sensor.py" ".pytest_cache/" "./" "../" "__init__.py" "receivers.py" "forms.py" "test_plannedcontrol.py")
 
- ("/home/frissan/.emacs.d/elisp/" (23630 60309 524882 23000) "base-global-keys.el" "lang-javascript.el" "lang-rust.el" "base-theme.el" "base-extensions.el" "base.el" "base-functions.el" "lang-dotnet.el" "./" "../" "lang-python.el" "lang-web.el")
-
  ("/home/frissan/documents/" (23671 39660 953269 986000) "KravdetaljeringMVPfinal.pdf" "clusters.png" "KravdetaljeringMVPfinal.ods" "7days-all-mids.csv" "dlb-ingress-users" "Underlag JF.xlsx" "KravdetaljeringMVPfinal.xlsx" "./" "../")
 
  ("/home/frissan/code/se-internal-provision/stage/vpc/" (23661 15521 974865 231000) "terraform.tfvars" ".terragrunt-cache/" "./" "../")
 
- ("/home/frissan/code/fv-kmi/kmi/" (23670 30090 313153 979000) "dependencies.py" "active_mq_base.py" "#mock.py#" "__pycache__/" "service.py" "mock.py" "active_mq.py" "database.py" "./" "../" "__init__.py" ".#mock.py" "#active_mq_base.py#")
-
  ("/home/frissan/code/fv-kmi/db/" (23669 16511 749031 423000) "README" "models.py" "__pycache__/" "manage.py" "versions/" "migrate.cfg" "./" "../" "__init__.py")
-
- ("/home/frissan/code/fv-kmi/" (23669 17002 532343 8000) ".git/" "tests/" "kmi.stage.nomad" "README.markdown" "kmi/" "local_config.yml" "db/" "kmi.prod.nomad" "docker-compose.yml" "env/" "config.yml" "requirements.txt" "awslogs.conf" "Dockerfile" "Makefile" "run.sh" ".gitignore" "supervisord.conf" "./" "../")
-
- ("/home/frissan/code/fv-kelvin/" (23667 44002 395918 436000) ".git/" "kelvin/" "tests/" ".gitmodules" "env/" "run.py" "aws.py" "build/" "setup.cfg" "README.md" "one.yml" "submodules/" "tasks/" ".gitignore" "requirements/" "libs/" "./" "../")
 
  ("/home/frissan/code/se-internal-provision/stage/" (23661 15279 204875 979000) "firehose_production_signals/" "s3-cbus-integration-buckets/" "vpc/" "./" "../")
 
@@ -199,8 +202,6 @@
  ("/home/frissan/code/test/" (23591 14802 73249 888000) "test.py" "./" "../")
 
  ("/home/frissan/.config/rofi/" (23592 32716 846617 881000) "config" "./" "../")
-
- ("/home/frissan/.emacs.d/elpa/" (23588 51627 56335 642000) "solarized-theme-20181030.1912/" "undo-tree-0.6.5.signed" "highlight-indentation-20181204.839/" "spacemacs-theme-20181107.1725/" "s-20180406.808/" "flycheck-20181214.1048/" "smartparens-20181212.1956/" "company-tern-20161004.1847/" "impatient-mode-20181002.1231/" "expand-region-20180817.1134/" "pip-requirements-20181027.1629/" "better-defaults-20170614.404/" "swiper-20181212.1655/" "archives/" "gnupg/" "counsel-20181223.325/" "yasnippet-20181015.1212/" "company-20181221.1538/" "ivy-20181223.2002/" "dash-20180910.1856/" "find-file-in-project-20181217.246/" "exec-path-from-shell-20180324.204/" "web-mode-20181214.658/" "bind-key-20180513.430/" "htmlize-20180923.1829/" "js2-refactor-20180502.1042/" "pyenv-mode-20170801.2348/" "pythonic-20180920.2315/" "dash-functional-20180107.1618/" "tern-20181108.722/" "py-autopep8-20160925.1052/" "use-package-20181119.2350/" "f-20180106.922/" "js2-mode-20180724.801/" "elpy-20181214.2233/" "rust-mode-20181218.1108/" "projectile-20181218.2023/" "pyvenv-20181219.1526/" "undo-tree-0.6.5/" "multiple-cursors-20180913.1237/" "js-comint-20181106.2238/" "smex-20151212.2209/" "./" "pkg-info-20150517.1143/" "../" "counsel-projectile-20181226.1514/" "simple-httpd-20180528.1603/" "epl-20180205.2049/" "which-key-20181114.1432/" "neotree-20181121.2026/")
 
  ("/home/frissan/Downloads/emacs.d/" (23588 51757 996329 832000) "init.el" "./" "../" "elisp/")
 

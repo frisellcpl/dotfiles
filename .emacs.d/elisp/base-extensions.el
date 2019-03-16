@@ -105,8 +105,4 @@
   ("C-x <left>" . windmove-left)
   ("C-x <right>" . windmove-right))
 
-(use-package org-mode
-  :mode
-  ("\\.org$" . org-mode))
-
 (provide 'base-extensions)

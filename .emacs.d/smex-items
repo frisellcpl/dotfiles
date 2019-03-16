@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ load-theme
+ color-theme-solarized
+ solitaire
+ package-install
  term
  buffer-menu
  markdown-mode
- elisp-byte-code-mode
- lisp-mode
- org-mode
- recover-file
 )
 
 ;; ----- smex-data -----
@@ -23,7 +23,7 @@
  (counsel-projectile-find-file . 1)
  (highlight-indentation-mode . 2)
  (package-refresh-contents . 2)
- (package-install . 3)
+ (package-install . 5)
  (csharp-mode . 1)
  (omnisharp-install-server . 1)
  (omnisharp-start-omnisharp-server . 2)
@@ -41,4 +41,7 @@
  (markdown-mode . 2)
  (buffer-menu . 1)
  (term . 1)
+ (color-theme-solarized . 2)
+ (solitaire . 1)
+ (load-theme . 1)
 )

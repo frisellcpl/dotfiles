@@ -1,12 +1,10 @@
 ;;; pyenv-mode-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-
-(add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory #$) (car load-path))))
-
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "pyenv-mode" "pyenv-mode.el" (0 0 0 0))
+;;;### (autoloads nil "pyenv-mode" "pyenv-mode.el" (23693 8009 827002
+;;;;;;  647000))
 ;;; Generated autoloads from pyenv-mode.el
 
 (autoload 'pyenv-mode-set "pyenv-mode" "\
@@ -36,14 +34,11 @@ Minor mode for pyenv interaction.
 
 \(fn &optional ARG)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pyenv-mode" '("pyenv-mode-")))
-
 ;;;***
 
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; pyenv-mode-autoloads.el ends here

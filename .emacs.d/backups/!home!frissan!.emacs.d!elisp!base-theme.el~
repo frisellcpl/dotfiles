@@ -1,6 +1,6 @@
-(use-package spacemacs-theme
+(use-package color-theme-solarized
   :defer t
   :init
-  (load-theme 'solarized-light t))
+  (load-theme 'solarized t))
 
 (provide 'base-theme)
