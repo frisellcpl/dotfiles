@@ -1,4 +1,0 @@
-resource "aws_s3_bucket" "main" {
-  bucket = "${replace(var.environment, "_", "-")}-${var.name}-raw"
-  acl    = "private"
-}

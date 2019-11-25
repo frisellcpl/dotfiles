@@ -1,6 +1,6 @@
 (use-package solarized-theme
   :defer t
   :init
-  (load-theme 'solarized-light t))
+  (load-theme 'solarized t))
 
 (provide 'base-theme)

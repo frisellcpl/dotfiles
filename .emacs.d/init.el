@@ -21,13 +21,16 @@
 (require 'lang-dotnet)
 
 (require 'better-defaults)
+(require 'base-theme)
 
 (setq inhibit-startup-message t) ;; hide the startup message
 (global-linum-mode t) ;; enable line numbers globally
-(load-theme 'solarized-dark t)
 
 (eval-after-load
  'company
  '(add-to-list 'company-backends 'company-omnisharp))
+
+;; Set default font
+(set-face-attribute 'default nil :family "Inconsolata" :height 120)
 
 (add-hook 'csharp-mode-hook #'company-mode)

@@ -1,29 +1,29 @@
 
 ;; ----- smex-history -----
 (
- load-theme
- color-theme-solarized
- solitaire
+ kill-emacs
  package-install
- term
- buffer-menu
- markdown-mode
+ recover-file
+ replace-string
+ multiple-cursors-mode
+ neotree-toggle
+ neotree
 )
 
 ;; ----- smex-data -----
 (
  (projectile-mode . 2)
  (which-key-show-full-keymap . 1)
- (neotree . 1)
+ (neotree . 2)
  (neotree-dir . 1)
  (counsel-projectile-switch-to-buffer . 1)
  (check-parens . 1)
- (recover-file . 3)
+ (recover-file . 8)
  (project-find-file . 1)
  (counsel-projectile-find-file . 1)
  (highlight-indentation-mode . 2)
  (package-refresh-contents . 2)
- (package-install . 5)
+ (package-install . 7)
  (csharp-mode . 1)
  (omnisharp-install-server . 1)
  (omnisharp-start-omnisharp-server . 2)
@@ -43,5 +43,15 @@
  (term . 1)
  (color-theme-solarized . 2)
  (solitaire . 1)
- (load-theme . 1)
+ (load-theme . 2)
+ (set-face-font . 4)
+ (font-show-log . 1)
+ (customize-face . 1)
+ (whitespace-cleanup . 1)
+ (whitespace-toggle-options . 4)
+ (set-frame-font . 1)
+ (neotree-toggle . 1)
+ (multiple-cursors-mode . 2)
+ (replace-string . 5)
+ (kill-emacs . 1)
 )
